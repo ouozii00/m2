@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="module">
+  import { fairyDustCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
+
+  new fairyDustCursor();
+</script>
+  <title>우유의효능</title>
+</head>
+<style>
+	.en-font {
+     font-family: "neue-haas-unica", sans-serif;font-weight: 400;font-style: italic;}
+    .kr-font {font-family: "Gothic A1", sans-serif;
+              font-weight: 400;
+              font-style: normal;}
+  .color { color: #f42d2d; }
+  html, body {width: 100vw; height: 100vh; margin: 0; padding: 0;}
+    
+    html, body, *{cursor: url('image1.png') 16 16, auto ;}
+    html:active, body:active, *:active { cursor: url('2.png') 16 16, auto ;overflow-x: hidden}
+    body {background-image: url('bg1.png');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;}
+
+  .milk-btn {
+  position: absolute;
+  left: 89vw;
+  top: 83vh;
+  height: 120px;
+  transition: transform 0.1s;}
+    .milk-btn:hover {
+      transform: rotate(-12deg);}
+
+  .background-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; 
+  z-index: -1;         
+}
+
+ main.scrollable-content {
+  position: absolute;
+  width: 75vw;
+  height: 65vh;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: auto;
+  border: 4px solid transparent; 
+  background-clip: padding-box, border-box, border-box, border-box, border-box;
+  background-color: white;
+  background-origin: border-box;
+  background-image:
+    url('bgw.png'),                 
+    url('dotdash.svg'),          
+    url('dotdash.svg'),          
+    url('dotdash-vertical.svg'), 
+    url('dotdash-vertical.svg'); 
+    background-size: contain, auto, auto, auto, auto;
+  background-position: center, top, bottom, left, right;
+  background-repeat:
+    no-repeat,      
+    repeat-x,      
+    repeat-x,     
+    repeat-y,     
+    repeat-y;       
+}
+
+  .imgpadding1 { padding-top:10px; padding-bottom:10px; padding-left: 40px; padding-right: 40px;}
+  .imgpadding2 { padding-top:10px; padding-bottom:10px; padding-left: 60px; padding-right: 60px;}
+
+  
+
+ 
+  
+ 
+ 
+  
+
+</style>
+<body>
+	<section style="margin: 0;">
+    <p class="en-font color" style="font-size: 3.6rem; margin: 0; padding-top: 33px;
+    padding-left: 60px;">Story of Milk </p>
+    <img src="b13.png" style="height: 47px; transform:translate(60px,10px)">
+  </section>
+   <section>
+    <a href="main.html" >
+       <img src="b1.png" alt="main" class="milk-btn">
+    </a>
+    </section>
+
+    <main class="scrollable-content" style="word-break:  keep-all;">
+      
+      <div class="image-container" style="display: flex; flex-direction: column; align-items: flex-start;">
+  
+  
+</div>
+
+      <div class="text-container">
+        <h2 class="color en-font kr-font" style="font-size: 1.8rem; margin: 0; font-weight: 600;">
+        
+      </h2>
+      <p class="color en-font kr-font" style="margin: 0;  font-size: 1.2rem;">
+        
+      </p>
+      <p class="color en-font kr-font" style="margin: 0;  font-size: 1.2rem; padding-top: 30px; padding-right: 150px;">
+       
+        <br><br>
+        
+      </p>
+
+      
+
+
+
+      </div>
+      
+      
+
+
+  </main>
+ 
+</body>
+</html>

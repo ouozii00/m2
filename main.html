@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="module">
+    import { bubbleCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
+    new bubbleCursor();
+  </script>
+  <style type="text/css">
+  	@import url("https://use.typekit.net/dmy2ond.css");
+  	.en-font {font-family: "neue-haas-unica", sans-serif;
+				font-weight: 400;
+				font-style: italic;}
+    html, body {width: 100vw; height: 100vh; margin: 0; padding: 0; }
+    section {width: 100vw; height: 100vh;}
+    html, body, * {cursor: url('image1.png') 16 16, auto ;}
+    html:active, body:active, *:active { cursor: url('2.png') 16 16, auto ;}
+.c-color{ color:#f42d2d; }
+   .color {color: #f42d2d;}
+   .blink-img:hover{animation:blink 0.2s steps(2,start) 3;}
+	@keyframes blink{to{opacity:0;}}
+	 body {background-image: url('dot2bg.png');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;}
+
+  </style>
+  <title>우유의 효능</title>
+</head>
+<body>
+	<audio id="sound-effect" src="Door Chime 1.mp3"></audio>
+
+ 	<section>
+	 	<div style="margin: 0; position: relative;">
+	 		  <p class="color en-font" style="font-size: 4rem; margin: 0; padding-left: 900px;  transform:translate(120px, 45px); ">
+	 		  	》Story of Milk
+	 		  </p>
+
+		 	<div style="position: relative; width: 100vw; height: 100vh;">
+			  
+			  <div style="display: flex; justify-content: center; align-items: flex-start; padding-top: 100px;">
+			    <img id="hover-img" src="mooo1.png" style="width: 1000px;">
+			    <img src="mm.png" style="width: 270px; margin-left: 100px; padding-top: 120px;">
+			  </div>
+
+			 
+			  <img src="dot2.png" style="position: absolute; top: 0; left: 30px; pointer-events: none;">
+
+			  
+			  <a href="index.html">
+			    <img src="b1.png" class="blink-img" style="position: absolute; height: 140px; top: 600px; left: 1400px;">
+			  </a>
+			  <a href="truth.html">
+			    <img src="b2.png" class="blink-img" style="position: absolute; height: 140px; top: 140px; left: 1140px;">
+			  </a>
+			  <a href="surprise.html">
+			  	<img src="b3.png" class="blink-img" style="position: absolute; height: 140px; top: 650px; left: 300px;">
+			  </a>
+			  <a href="profile.html">
+			    <img src="b4.png" class="blink-img" style="position: absolute; height: 140px; top: 400px; left: 100px;">
+			  </a>
+			  <a href="archive.html">
+			    <img src="b5.png" class="blink-img" style="position: absolute; height: 140px; top: 300px; left: 800px;">
+			  </a>
+			<p class="c-color" style="margin: 0; padding-top: 50px; text-align: center;">Copyright © 2025 Story of Milk. 모든 권리 보유.</p>
+			</div>
+	 	</div>
+	</section>
+
+  <script>
+    const img = document.getElementById('hover-img');
+    img.addEventListener('mouseenter', function(){img.src = 'mooo2.png';});
+    img.addEventListener('mouseleave', function(){ img.src = 'mooo1.png';});
+
+
+    const sound = document.getElementById('sound-effect');
+
+    img.addEventListener('click', function() {
+      sound.currentTime = 0;
+      sound.play();
+    });
+  </script>
+</body>
+</html>

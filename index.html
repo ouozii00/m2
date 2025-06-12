@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script type="module">
+  import { fairyDustCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
+
+  new fairyDustCursor();
+</script>
+    <meta charset="UTF-8">
+    <title>우유의 효능</title>
+    <style>
+        @import url("https://use.typekit.net/dmy2ond.css");
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gothic+A1:wght@400;500;600;700;800;900&family=Noto+Sans+KR:wght@100..900&display=swap');
+        
+
+    .en-font {
+     font-family: "neue-haas-unica", sans-serif;font-weight: 400;font-style: italic;}
+    .kr-font {font-family: "Gothic A1", sans-serif;
+              font-weight: 400;
+              font-style: normal;}
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: #fff;
+            
+            height: 100vh;
+        }
+    html, body, * {
+    cursor: url('image1.png') 16 16, auto !important;}
+    html:active, body:active, *:active {
+        cursor: url('2.png') 16 16, auto !important;}
+
+        .color { color: #f42d2d; }
+        .wrap { width: 1000px;
+                margin: 0 auto; 
+                text-align: center;
+                position: relative;}
+
+        .wrap img { width: 100%; height: auto; position: absolute;}
+        .wrap img.umma-img {top: 20px;}
+.umma-hover {transition: all 0.3s ease; z-index: 2; transform: translate(-50%, -50%);}
+
+.umma-hover:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
+  cursor: url('image1.png') 16 16, auto;}
+.text-box-outer {
+  position: absolute;
+  bottom: 40px;
+  right: 55px;
+  border: 2px solid #f42d2d;
+  padding: 18px 24px;
+  border-radius: 0;
+  color: #f42d2d;
+  z-index: 4;
+  background: transparent;
+  margin: 0;}
+.text-box-inner {
+  color: #f42d2d;
+  background: transparent;
+  font-size: 1.2rem;
+  margin: 0;
+  text-align: left;}
+
+.c-color{ color:#f42d2d; }
+
+    </style>
+
+
+
+
+</head>
+<body>
+    <audio id="sound-effect" src="Csound.mp3"></audio>
+    <section>
+       <div class="color wrap" style="position: relative; width: 100%; height: 100vh;">
+    
+    
+    <img src="ummabg.png" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 1367px;">
+    
+    <img src="mmo.png"
+     class="umma-hover" id="sound-img"
+     style="position: absolute; left: 50%; top: 50%; width: 1367px;">
+    
+    <p  style= "font-size: 4rem; margin: 0; position: relative; padding-top: 30px;">
+
+    <span class= "en-font"> Story of Milk</span> 
+    <span class= "kr-font">우유의 효능 </span>
+     <img src="dot.png"
+     style="position: relative;  bottom: 30px; width: 93%;">
+    <img src="post.png" style="
+    position: absolute;
+    top: 130px;
+    left: 30px;
+    width: 250px;
+    transform: rotate(-5deg);
+    z-index: 3;">
+     <p class="kr-font" style="font-size: 1.3rem; position: absolute; top: 40px; left: 55px; z-index: 4;text-align: left;">!우유의 이야기를 <br>들어보세요! </p>
+
+     <p class="en-font" style="font-size: 2rem; position: absolute; top: 100px; left: 1200px; z-index: 4;text-align: left;">↓↓↓Click The Cow↓↓↓</p>
+
+    
+    <div class="text-box-outer" style="padding-left: 13px; padding-right: 13px;">
+      <p class="kr-font text-box-inner">
+        우유!!<br>
+        어디까지<br>
+        알고 <br>
+        계세요?
+      </p>
+    </div>
+    <p class="kr-font" style=" position: absolute; bottom: -5px; left: 40px; z-index: 4;text-align: left;"> 
+        <span style=" font-size: 4.2rem;"> 牛奶</span> <br> 
+        <span style=" font-size: 4.2rem;">Milk</span> 
+        <span style="font-size: 2rem;">: 1소의 젖, 2 영어권에서는 양, 염소 등의 젖도 통칭</span>
+        <span style="font-size: rem; padding-left:300px;">Copyright © 2025 Story of Milk. 모든 권리 보유.</span></p>
+    </section>
+    <script>
+      document.getElementById('sound-img').addEventListener('click', function() {
+        var audio = document.getElementById('sound-effect');
+        audio.currentTime = 0;
+        audio.play();
+        audio.onended = function() {
+          window.location.href = "main.html";  // 여기를 이동할 파일 이름/주소로!
+        };
+      });
+    </script>
+</body>
+</html>
