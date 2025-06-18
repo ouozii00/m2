@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="module">
+    import { fairyDustCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
+    new fairyDustCursor();
+  </script>
+  <title>우유의효능</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.typekit.net/dmy2ond.css">
+</head>
+<style>
+  @import url("https://use.typekit.net/dmy2ond.css");
+   @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gothic+A1:wght@400;500;600;700;800;900&family=Noto+Sans+KR:wght@100..900&display=swap');
+    .en-font {
+     font-family: "neue-haas-unica", sans-serif;font-weight: 400;font-style: italic;}
+    .kr-font {font-family: "Gothic A1", sans-serif;
+              font-weight: 400;
+              font-style: normal;}
+  
+  .en-font { font-family: "neue-haas-unica", sans-serif; font-weight: 400; font-style: italic; }
+  .kr-font { font-family: "Gothic A1", sans-serif; font-weight: 400; font-style: normal; }
+  .color { color: #f42d2d; }
+  element {
+    cursor: url('2.png'), pointer;}
+  html, body, * { cursor: url('image1.png') 16 16, auto; }
+  html:active, body:active, *:active { cursor: url('2.png') 16 16, auto; }
+  .milk-btn { position: absolute; left: 89vw; top: 83vh; height: 120px; transition: transform 0.1s; z-index: 10; }
+  .milk-btn:hover { transform: rotate(-12deg); }
+  html { height: 100%; }
+  body {
+    width: 100vw; height: 100vh; margin: 0; padding: 0; overflow: hidden;
+    background-image: url('bgbg1.png'); background-size: cover; background-position: center;
+    position: relative;
+  }
+  header { padding: 33px 60px 0 60px; position: relative; z-index: 5; }
+  header p { font-size: 3.6rem; margin: 0; }
+
+  main.scrollable-content {
+    position: absolute;
+    width: 75vw;
+    height: 60vh;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    border: 4px solid transparent; 
+    background-clip: padding-box, border-box, border-box, border-box, border-box;
+    background-color: white;
+    background-origin: border-box;
+    background-image:
+      url('bgw.png'), url('dotdash.svg'), url('dotdash.svg'), url('dotdash-vertical.svg'), url('dotdash-vertical.svg'); 
+    background-size: contain, auto, auto, auto, auto;
+    background-position: center, top, bottom, left, right;
+    background-repeat: no-repeat, repeat-x, repeat-x, repeat-y, repeat-y;
+  }
+
+  .image-container {
+    flex: 0 0 35%; 
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; 
+    box-sizing: border-box; 
+  }
+
+  .image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .text-container {
+    flex: 1; 
+    overflow-y: auto;
+    padding: 23px 12px;
+  }
+  
+  .text-container::-webkit-scrollbar { width: 12px; }
+  .text-container::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
+  .text-container::-webkit-scrollbar-thumb { background: #f42d2d; border-radius: 10px; }
+  .text-container { scrollbar-width: thin; scrollbar-color: #f42d2d #f1f1f1; }
+
+  #tooltip {
+    position: fixed; background-color: rgba(16, 36, 225, 0.93); color: white;
+    padding: 10px 15px; z-index: 999; opacity: 0; transition: opacity 0.2s ease;
+    pointer-events: none; white-space: pre-wrap; max-width: 250px;
+  }
+  .imgpadding1 { padding-top:10px; padding-bottom:10px; padding-left: 40px; padding-right: 40px;}
+  .imgpadding2 { padding-top:10px; padding-bottom:10px; padding-left: 60px; padding-right: 60px;}
+
+ .sticker { position: absolute; z-index: 5; transition: transform 0.3s ease;  }
+  .sticker:hover { transform: scale(1.05); }
+  #sticker-cow { top: 62vh; left: -5vw; }
+  #sticker-creal{ top: -12vh; left: 78vw; }
+  #sticker1 {
+  height: 17vh; 
+  top: 75vh;   
+  left: 80vw; 
+  
+}
+#sticker1:hover {
+  transform:  rotate(10deg);
+}
+.rotate:hover {
+  transform: rotate(5deg);
+}
+.rotate1:hover {
+  transform: rotate(-5deg);
+}
+
+  #popup-image { position: fixed; top: 84%; left: 25%; transform: translate(-50%, -50%); z-index: 100; max-width: 50vw; width: 30px; }
+  .hidden { display: none; }
+  .umma-hover:hover {animation: pulse-glow 1.2s infinite ;}
+  @keyframes pulse-glow {0% {transform: scale(1); filter: drop-shadow(0 0 5px #D7FFFE);} 50% {transform: scale(1.1); filter: drop-shadow(0 0 15px #D7FFFE) drop-shadow(0 0 25px #D7FFFE);} 100% {transform: scale(1); filter: drop-shadow(0 0 5px #D7FFFE);}}
+.music-playing {
+  animation: pulse-glow 1.0s infinite;
+}
+
+
+#marquee-container {
+  position: absolute;
+  top: 88vh;
+  left: 25vw;
+  width: 50vw; 
+  z-index: 3;
+    overflow: hidden; 
+}
+
+#marquee-content {
+  display: inline-block;
+  white-space: nowrap; 
+  animation: scroll-left 3s linear infinite;
+}
+
+#marquee-content span {
+  font-size: 1.7rem;
+  padding-right: 5vw; 
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+</style>
+<body>
+  <audio id="bgm" src="Stardew Valley OST - Settling In.mp3" loop></audio>
+  <audio id="sound-effect" src="push.mp3"></audio>
+ <audio id="sound-effect1" src="3.mp3"></audio>
+
+
+
+
+
+  <header>
+    <p class="en-font color">Story of Milk</p>
+  </header>
+
+  <main class="scrollable-content" style="word-break:  keep-all;">
+      <div class="image-container" style="display: flex; flex-direction: column; align-items: flex-start;">
+        <img src="pf.png" class="rotate1" style="height: 60px; margin-bottom: 76px;">
+        <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExamFjbjN1aGo1eWZ3dGVjY2c0ZGhtaWtrN2h5N3dieW94Z29pc3ZmcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4KEWSNWo2O53QveSxj/giphy.gif" class="rotate">
+      </div>
+      <div class="text-container">
+        <h2 class="color en-font kr-font" style="font-size: 1.8rem; margin: 0; font-weight: 600;">NAME : 우유: (牛乳, milk)</h2>
+        <p class="color en-font kr-font" style="margin: 0;  font-size: 1.2rem; line-height: 1.5; ">소의 젖이다.<br>소젖, 쇠젖 혹은 타락으로도 불린다.</p>
+        <p class="color en-font kr-font" style="margin: 0;  font-size: 1.2rem; line-height: 1.5; ">한자권의 [우유]와는 다르게, 영어권의 [MILK]는 주로 소나 양, 염소, 물소의 젖을 모두 통칭한다.</p>
+        <p class="color en-font kr-font" style="margin: 0;  font-size: 1.2rem; padding-top: 30px; padding-right: 150px; line-height: 1.5;">
+          본래 송아지의 성장을 위한 것이지만 초기의 인류는 대부분이 맑은 물을 구하기 어려운 지역에서 살아왔던 탓에 가축으로 기르는 동물의 젖을 먹으려 시도했고, 나중에는 돌연변이가 생기면서 대다수의 인류도 다른 동물의 젖을 소화할 수 있는 방향으로 진화했다. 젖소 역시 자기가 낳은 송아지에게 먹일 양보다 훨씬 많은 젖을 생산하도록 개량, 육종되었다.
+          <br><br>
+          다양한 영양소가 골고루 들어 있는 만큼 그대로 마시기도 하며, 전통적으로 동아시아권보다 낙농업이 발달했던 유럽 및 중동, 그리고 중앙아시아의 식생활을 지탱하는 중요한 식재료로 기능해 왔다. 오늘날 우유는 치즈, 버터, 크림, 요구르트 등의 다양한 유제품으로 가공되어 널리 소비된다. 빵과 과자를 만들 때도 다방면에서 사용한다.
+          </p>
+          <img src="1.jpg" style="width: 180px;">
+
+          <p class="color en-font kr-font" style="margin: 0;  font-size: 1.2rem; padding-top: 30px; padding-right: 150px; line-height: 1.5;">
+          대략적으로 물 87%, 지방 4%, 단백질 3.5%, 유당 5%, 미네랄 0.7% 정도의 성분이 콜로이드 형태로 구성되어 있다. (이 값들은 대략적인 수치라서 모두 더하면 100%가 넘는다.) 특히 비타민 B군이 풍부하다. 하지만 지용성 비타민인 비타민 A, 비타민 D, 비타민 E는 극히 적고, 비타민 C는 원유 살균 과정에서 파괴된다.
+
+  </p>
+      </div>
+  </main>
+
+  <img src="cow3.png" class="sticker umma-hover" id="sticker-cow" style="width: 520px;">
+  <img src="creal.png" class="sticker " id="sticker-creal" style="width: 400px;">
+
+  <div id="marquee-container">
+    <div id="marquee-content">
+      <span class="en-font color">Click the cow to play music!!!</span>
+      <span class="en-font color">Click the cow to play music!!!</span>
+    </div>
+  </div>
+
+  <img src="IMG_8884.JPG" style="position: absolute;" id="sticker1">
+
+  <a href="main.html" >
+    <img src="b1.png" alt="main" class="milk-btn">
+  </a>
+<script>
+    
+    const cowSticker = document.getElementById('sticker-cow');
+    const bgm = document.getElementById('bgm');
+
+    cowSticker.addEventListener('click', () => {
+      if (bgm.paused) {
+        bgm.play(); 
+        cowSticker.classList.add('music-playing'); 
+      } else {
+        bgm.pause(); 
+        cowSticker.classList.remove('music-playing'); 
+      }
+    });
+
+    const hoverCards = document.querySelectorAll('.hover-card');
+    const tooltip = document.getElementById('tooltip');
+
+    hoverCards.forEach(card => {
+      card.addEventListener('mouseenter', (event) => {
+        const description = event.target.dataset.description;
+        tooltip.textContent = description;
+        tooltip.style.opacity = '1';
+      });
+
+      card.addEventListener('mousemove', (event) => {
+        tooltip.style.left = event.pageX + 15 + 'px';
+        tooltip.style.top = event.pageY + 15 + 'px';
+      });
+
+      card.addEventListener('mouseleave', () => {
+        tooltip.style.opacity = '0';
+      });
+    });
+      const crealSticker = document.getElementById('sticker-creal');
+    const soundEffect = document.getElementById('sound-effect');
+
+    if (crealSticker && soundEffect) {
+      crealSticker.addEventListener('click', () => {
+        soundEffect.currentTime = 0;
+        soundEffect.play();
+      });
+    }
+
+    const sticker1 = document.getElementById('sticker1');
+    const sticker1Sound = document.getElementById('sound-effect1');
+
+    if (sticker1 && sticker1Sound) {
+      sticker1.addEventListener('click', () => {
+        sticker1Sound.currentTime = 0;
+        sticker1Sound.play();
+      });
+    }
+</script>
+  </script>
+</body>
+</html>

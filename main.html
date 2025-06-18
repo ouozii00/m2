@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="module">
+    import { bubbleCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
+    new bubbleCursor();
+  </script>
+  <style type="text/css">
+  	@import url("https://use.typekit.net/dmy2ond.css");
+  	.en-font {font-family: "neue-haas-unica", sans-serif;
+				font-weight: 400;
+				font-style: italic;}
+    html, body {width: 100vw; height: 100vh; margin: 0; padding: 0;overflow: hidden; }
+    section {width: 100vw; height: 100vh;}
+    html, body, * {cursor: url('image1.png') 16 16, auto ;}
+    html:active, body:active, *:active { cursor: url('2.png') 16 16, auto ; }
+    .c-color{ color:#f42d2d; }
+    .color {color: #f42d2d;}
+    .blink-img:hover{animation:blink 0.2s steps(2,start) 3;}
+	@keyframes blink{to{opacity:0;}}
+	 body {background-image: url('dot2bg.png');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;}
+
+  </style>
+  <title>우유의 효능</title>
+</head>
+<body>
+	<audio id="sound-cow" src="Csound.mp3"></audio>
+	<audio id="sound-chime" src="Door Chime 1.mp3"></audio>
+	<audio id="sound-push" src="push.mp3"></audio>
+
+ 	<section>
+ 		<p class="color en-font" style="font-size: 1.5vw; margin: 0; padding-left: 28vw; transform:translate(-15vw, 12vh); position: absolute;"  >
+	 		  	Click all of elements!!
+	 		  </p>
+
+	 	<div style="margin: 0; position: relative;">
+	 		  <p class="color en-font" style="font-size: 3.5vw; margin: 0; padding-left: 47vw; transform:translate(13.25vw, 4.1vh);">
+	 		  	》Story of Milk
+	 		  </p>
+
+
+	 		  
+
+		 	<div style="position: relative; width: 100vw; height: 100vh;">
+
+			  
+			  <div style="display: flex; justify-content: center; align-items: flex-start; padding-top: 9vh;">
+			    <img id="hover-img" src="mooo1.png" style="width: 58vw;">
+			    <img id="chime-img" src="mm.png" style="width: 18vw; margin-left: 5.2vw; padding-top: 11vh;">
+			  </div>
+
+			 
+			  <img src="dot2.png" style="position: absolute; top: 0; left: 1.5vw; pointer-events: none;">
+
+			  
+			  <a href="index.html">
+			    <img src="b1.png" class="blink-img" style="position: absolute; height: 13vh; top: 55.5vh; left: 73vw;">
+			  </a>
+			  <a href="truth.html">
+			    <img src="b2.png" class="blink-img" style="position: absolute; height: 13vh; top: 13vh; left: 61.5vw;">
+			  </a>
+			  <a href="surprise.html">
+			  	<img src="b3.png" class="blink-img" style="position: absolute; height: 13vh; top: 64vh; left: 15.6vw;">
+			  </a>
+			  <a href="profile.html">
+			    <img src="b4.png" class="blink-img" style="position: absolute; height: 13vh; top: 37vh; left: 4.2vw;">
+			  </a>
+			  <a href="archive.html">
+			    <img src="b5.png" class="blink-img" style="position: absolute; height: 13vh; top: 27.8vh; left: 41.6vw;">
+			  </a>
+			<p class="c-color" style="margin: 0; padding-top: 4.6vh; text-align: center;">Copyright © 2025 Story of Milk. 모든 권리 보유.</p>
+			</div>
+	 	</div>
+	</section>
+
+  <script>
+    const bigCowImg = document.getElementById('hover-img');
+    const smallCowImg = document.getElementById('chime-img');
+    const cowSound = document.getElementById('sound-cow'); 
+    const chimeSound = document.getElementById('sound-chime');
+
+    bigCowImg.addEventListener('mouseenter', function(){bigCowImg.src = 'mooo2.png';});
+    bigCowImg.addEventListener('mouseleave', function(){ bigCowImg.src = 'mooo1.png';});
+    
+    bigCowImg.addEventListener('click', function() {
+      chimeSound.currentTime = 0;
+      chimeSound.play();
+    });
+
+    smallCowImg.addEventListener('click', function() {
+      cowSound.currentTime = 0;
+      cowSound.play();
+    });
+
+
+    const pushSound = document.getElementById('sound-push');
+    const blinkImages = document.querySelectorAll('.blink-img');
+
+    blinkImages.forEach(function(image) {
+      const link = image.closest('a');
+
+      link.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        
+        pushSound.currentTime = 0;
+        pushSound.play();
+        const destination = link.href;
+        setTimeout(function() {
+          window.location.href = destination;
+        }, 300); 
+      });
+    });
+  </script>
+</body>
+</html>

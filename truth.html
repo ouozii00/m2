@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="module">
+  import { rainbowCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
+  new rainbowCursor();
+</script>
+  <title>우유의효능</title>
+</head>
+<style>
+   @import url("https://use.typekit.net/dmy2ond.css");
+   @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gothic+A1:wght@400;500;600;700;800;900&family=Noto+Sans+KR:wght@100..900&display=swap');
+    .en-font {
+     font-family: "neue-haas-unica", sans-serif;font-weight: 400;font-style: italic;}
+    .kr-font {font-family: "Gothic A1", sans-serif;
+              font-weight: 400;
+              font-style: normal;}
+
+    html, body {
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      overflow: hidden; 
+    }
+
+    html, body, *{cursor: url('image1.png') 3 3, auto ;}
+    html:active, body:active, *:active { cursor: url('2.png') 3 3, auto ;}
+
+    body {
+      background-image: url('bg4.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    /* [변경] page-container를 반응형으로 만듭니다. */
+    #page-container {
+      position: relative; 
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .wrap {width: 1000px; height: 600px; margin: 0; }
+
+  .milk-btn { position: absolute; left: 89vw; top: 83vh; height: 120px; transition: transform 0.1s; z-index: 10; }
+  .milk-btn:hover { transform: rotate(-12deg); }
+
+
+    .color { color: #f42d2d; }
+    
+     @keyframes pulse-glow {0% {transform: scale(1);
+                  filter: drop-shadow(0 0 5px #D7FFFE);}
+                50% {transform: scale(1.1);
+                  filter: drop-shadow(0 0 15px #D7FFFE) drop-shadow(0 0 25px #D7FFFE);}
+                100% {transform: scale(1);
+                    filter: drop-shadow(0 0 5px #D7FFFE);}}
+    .umma-hover {transition: all 0.3s ease;}
+    .umma-hover:hover {animation: pulse-glow 1.2s infinite ease-in-out;}
+
+    .umma-hover:hover {animation: pulse-glow 1.2s infinite ease-in-out;}
+    .shake-tilt-hover:hover {animation: tilt-shake 0.12s linear infinite; filter: drop-shadow(0 0 4px #A4FFFD) drop-shadow(0 0 10px #A4FFFD); transform: scale(1.12);}
+    @keyframes tilt-shake {0% { transform: rotate(-8deg);} 50% { transform: rotate(8deg);} 100% { transform: rotate(-8deg);}}
+    .shake-tilt-hover2:hover {animation: tilt-shake-2 0.12s linear infinite; transform: scale(1.12);}
+    @keyframes tilt-shake-2 {0% { transform: rotate(-5deg);} 50% { transform: rotate(5deg);} 100% { transform: rotate(-5deg);}}
+        
+    /* [변경] 팝업 관련 스타일도 모두 vw/vh 단위로 변경합니다. */
+    .popup-img {
+      position: absolute; 
+      display: none;
+      z-index: 100;
+      background: white;
+      border-radius: 0.52vw; /* 10px -> vw */
+      box-shadow:  2px 2px 12px rgba(170, 255, 0, 1);
+    }
+    .popup-img.active {
+      display: block;
+    }
+    .popup-content {
+      width: 32.6vw; /* 550px -> vw */
+      display: block;
+    }
+    .close-btn {
+      position: absolute; 
+      top: 0.18vh; /* 2px -> vh */
+      right: 0.2vw; /* 4px -> vw */
+      background: transparent; 
+      color: white; 
+      border: none; 
+      font-size: 0.83vw; /* 16px -> vw */
+      width: 1.25vw; /* 24px -> vw */
+      height: 2.2vh; /* 24px -> vh */
+      padding: 0;
+    }
+</style>
+
+<body>
+<audio id="sound-effect" src="push.mp3"></audio>
+
+<!-- 1920x1080 기준 뷰포트 단위로 모두 변환합니다. -->
+<div id="page-container">
+
+  <section style="margin: 0;">
+    <p class="en-font color" style="font-size: 3.6rem; margin: 0; padding-top: 3.05vh; padding-left: 3.125vw;">Story of Milk </p>
+  </section>
+  <section>
+    <img src="labelmoo.png" class="umma-hover" style="position: absolute; top: 11.1vh; left: 5.2vw; height: 37.4vh;">
+  </section>
+
+  <section>
+    <p class="en-font color" style="font-size:2.6rem; position: absolute; top: 14.8vh; left: 42.5vw;">Click the emoji!! ↓↓↓</p>
+
+    <img src="Frame1.png" class="popup-trigger shake-tilt-hover" data-target="popup1" style="width: 7vw; position: absolute; top: 28vh; left: 45vw;"/>
+    <div class="popup-img draggable" id="popup1" style="left: 1.98vw; top: 36.4vh;">
+      <img src="pop4.png" class="popup-content"/>
+      <button class="close-btn">✖</button>
+    </div>
+
+    <img src="Frame4.png" class="popup-trigger shake-tilt-hover" data-target="popup2" style="width: 7vw; position: absolute; top: 51.3vh; left: 42vw;"/>
+    <div class="popup-img draggable" id="popup2" style="left: 12vw; top: 47.7vh;">
+      <img src="pop2.png" class="popup-content"/>
+      <button class="close-btn">✖</button>
+    </div>
+
+    <img src="Frame5.png" class="popup-trigger shake-tilt-hover" data-target="popup3" style="width: 7vw; position: absolute; top: 25vh; left: 78.5vw;"/>
+    <div class="popup-img draggable" id="popup3" style="left: 53.1vw; top: 41.2vh;">
+      <img src="pop3.png" class="popup-content"/>
+      <button class="close-btn">✖</button>
+    </div>
+    
+    <img src="Frame6.png" class="popup-trigger shake-tilt-hover" data-target="popup4" style="width: 7vw; position: absolute; top: 37vh; left: 70.1vw;"/>
+    <div class="popup-img draggable" id="popup4" style="left: 42.2vw; top: 21.9vh;">
+      <img src="pop5.png" class="popup-content"/>
+      <button class="close-btn">✖</button>
+    </div>
+
+    <img src="Frame7.png" class="popup-trigger shake-tilt-hover" data-target="popup5" style="width: 7vw; position: absolute; top: 46.3vh; left: 84.1vw;"/>
+    <div class="popup-img draggable" id="popup5" style="left: 60.8vw; top: 0.9vh;">
+      <img src="pop7.png" class="popup-content"/>
+      <button class="close-btn">✖</button>
+    </div>
+
+    <img src="Frame8.png" class="popup-trigger shake-tilt-hover" data-target="popup6" style="width: 7vw; position: absolute; top: 41.6vh; left: 56.5vw;"/>
+    <div class="popup-img draggable" id="popup6" style="left: 36.1vw; top: 60.2vh;">
+      <img src="pop8.png" class="popup-content"/>
+      <button class="close-btn">✖</button>
+    </div>
+    
+    <img src="cowbaby.png" class="shake-tilt-hover2" style="position: absolute; top: 55.5vh; left: 63.5vw; width: 15vw;">
+    
+    <div style="position: absolute; top: 59.5vh; left: 20.7vw; font-size: 1.5rem;">
+      <p class="color">우리가 모르고 있었던 <br> 우유의 어두운 진실</p>
+      <p class="color" style="padding-top: 9.25vh;">몰랐던 우유에 대해 알아보는 시간을 가져보세요!!</p>
+    </div>
+  </section>
+
+</div> 
+
+
+<a href="main.html" ><img src="b1.png" alt="main" class="milk-btn"></a>
+
+<script>
+let highestZ = 100;
+const soundEffect = document.getElementById('sound-effect');
+
+document.querySelectorAll('.popup-trigger').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    if (soundEffect) {
+        soundEffect.currentTime = 0;
+        soundEffect.play();
+    }
+    const targetId = trigger.getAttribute('data-target');
+    const popup = document.getElementById(targetId);
+    popup.classList.add('active');
+    highestZ++;
+    popup.style.zIndex = highestZ;
+  });
+});
+
+document.querySelectorAll('.close-btn').forEach(button => {
+  button.addEventListener('click', (e) => {
+    e.target.closest('.popup-img').classList.remove('active');
+  });
+});
+
+const makeDraggable = (element) => {
+  let isDragging = false;
+  let offsetX = 0;
+  let offsetY = 0;
+
+  element.addEventListener('mousedown', (e) => {
+    if (e.button !== 0) return;
+    isDragging = true;
+    document.body.style.userSelect = "none";
+    element.style.cursor = 'move';
+    highestZ++;
+    element.style.zIndex = highestZ;
+    const rect = element.getBoundingClientRect();
+    
+    // getBoundingClientRect는 px단위이므로 offset 계산은 그대로 사용합니다.
+    offsetX = e.clientX - rect.left;
+    offsetY = e.clientY - rect.top;
+    
+    element.style.transition = 'none';
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    
+    // [핵심 변경 사항]
+    // 1. 마우스 위치(px)에 따라 새 위치를 픽셀로 계산합니다.
+    const newX = e.clientX - offsetX;
+    const newY = e.clientY - offsetY;
+    
+    // 2. 현재 뷰포트의 너비와 높이를 가져옵니다.
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+    
+    // 3. 픽셀 위치를 vw, vh 단위로 변환하여 스타일에 적용합니다.
+    element.style.left = (newX / vw) * 100 + 'vw';
+    element.style.top = (newY / vh) * 100 + 'vh';
+  });
+
+  window.addEventListener('mouseup', () => {
+    if (isDragging) {
+      isDragging = false;
+      document.body.style.userSelect = "";
+      element.style.cursor = 'default';
+      setTimeout(()=>{ element.style.transition = ''; }, 10);
+    }
+  });
+};
+
+document.querySelectorAll('.draggable').forEach(el => {
+  makeDraggable(el);
+});
+</script>
+</body>
+</html>

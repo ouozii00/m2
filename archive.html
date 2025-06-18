@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="module">
+  import { rainbowCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
+
+  new rainbowCursor();
+</script>
+  <title>우유의효능</title>
+</head>
+<style>
+  .en-font { font-family: "neue-haas-unica", sans-serif;font-weight: 400;font-style: italic; }
+  .kr-font {font-family: "Gothic A1", sans-serif; font-weight: 400; font-style: normal;}
+  .color { color: #f42d2d; }
+  html, body {width: 100vw; height: 100vh; margin: 0; padding: 0;}
+  html, body, *{cursor: url('image1.png') 16 16, auto ;}
+  html:active, body:active, *:active { cursor: url('2.png') 16 16, auto ;overflow-x: hidden}
+  body { overflow: hidden; background-image: url('bbbb1.png'); background-size: cover; background-position: center; background-repeat: no-repeat;}
+  .milk-btn { position: absolute; left: 89vw; top: 83vh; height: 120px; transition: transform 0.1s; z-index: 10; }
+  .milk-btn:hover { transform: rotate(-12deg); }
+   main.scrollable-content { 
+    position: absolute; 
+    width: 75vw; 
+    height: 65vh; 
+    top: 54%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    overflow-y: auto; 
+    border: 4px solid transparent; 
+    background-clip: padding-box, border-box, border-box, border-box, border-box; 
+    background-color: white; 
+    background-origin: border-box; 
+    background-image: url('bgw.png'), url('dotdash.svg'), url('dotdash.svg'), url('dotdash-vertical.svg'), url('dotdash-vertical.svg'); 
+    background-size: contain, auto, auto, auto, auto; 
+    background-position: center, top, bottom, left, right; 
+    background-repeat: no-repeat, repeat-x, repeat-x, repeat-y, repeat-y; 
+    z-index: 0;
+  }
+  .sticker { position: absolute; z-index: 5; transition: transform 0.3s ease; cursor: pointer; }
+  .sticker:hover { transform: scale(1.05); }
+  #sticker-cow { top: 71vh; left: 6vw; height: 250px; }
+  #popup-image { position: fixed; top: 84%; left: 25%; transform: translate(-50%, -50%); z-index: 100; max-width: 50vw; width: 350px; }
+  .hidden { display: none; }
+  .umma-hover:hover {animation: pulse-glow 1.2s infinite ;}
+  @keyframes pulse-glow {0% {transform: scale(1); filter: drop-shadow(0 0 5px #D7FFFE);} 50% {transform: scale(1.1); filter: drop-shadow(0 0 15px #D7FFFE) drop-shadow(0 0 25px #D7FFFE);} 100% {transform: scale(1); filter: drop-shadow(0 0 5px #D7FFFE);}}
+
+  
+  
+  .hover-card:hover {
+    transform: rotate(-3deg) scale(1.03); 
+  }
+
+  
+  #tooltip {
+    position: fixed; 
+    background-color: rgba(16, 36, 225, 0.93);
+    color: white;
+    padding: 10px 15px;
+    
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    white-space: pre-wrap;
+    max-width: 250px;
+  }
+  .imgpadding1 { padding-top:10px; padding-bottom:10px; padding-left: 40px; padding-right: 40px;}
+  .imgpadding2 { padding-top:10px; padding-bottom:10px; padding-left: 60px; padding-right: 60px;}
+
+
+    
+    
+html {
+  scrollbar-width: thin; 
+  scrollbar-color: #f42d2d #f1f1f1;
+}
+</style>
+<body>
+  <header style="z-index: 2; position:relative;">
+    <p class="en-font color" style="font-size: 3.6rem; margin: 0; padding-top: 33px; padding-left: 60px;">Story of Milk </p>
+      <p class="en-font color" style="position: absolute; font-size: 2rem; margin: 0; top: 15vh; left: 73vw;">Click the cow!!! </p>
+    <img src="b12.png" style="height: 47px; transform:translate(60px,10px)">
+  </header>
+
+  <main class="scrollable-content" style="margin: auto; text-align: center;">
+      <div class="text-container" style="padding-top: 20px; padding-bottom: 20px; padding-left: 10px; padding-right: 10px ;">
+        <img src="img/g/1.jpg" class="hover-card imgpadding1 " style="height: 300px;" 
+             data-description="1970년대 서울우유 병입 ">
+
+        <img src="img/g/Touitsu180-1-2.jpg" class="hover-card imgpadding1 " style=" height: 300px;"
+             data-description="1960년대 대만 유통 president milk 병입">
+
+        <img src="img/g/123.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="稚内牛乳 (Wakkanai Milk),홋카이도">
+
+        <img src="img/g/jj.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="くさつ高原牛乳 (Kusatsu Kōgen Gyūnyū / 구사쓰 고원 우유">
+
+        <img src="img/g/mm.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="대만 수출용 메이지 우유 병입">
+
+        <img src="img/g/v_02_6.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="서울우유 A2+ 병입">
+       
+        <img src="img/g/v1.png" class="hover-card imgpadding2" style="padding: 10px; height: 300px;"
+             data-description="2010년대 서울우유 병입">
+
+         <img src="img/g/Glico180-1-2z.png" class="hover-card imgpadding2" style="padding: 10px; height: 300px;"
+             data-description="1960년대 글리코 우유 병입">  
+
+         <img src="img/g/Glico200-4-1.png" class="hover-card imgpadding2" style="padding: 10px; height: 300px;"
+             data-description="1980년대 글리코 우유 병입">
+
+        <img src="img/g/meiji180-1-2z.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+                     data-description="1960년대 메이지 우유 병입">   
+
+        <img src="img/g/Meiji200-4-2.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="1980년대 메이지 우유 병입"> 
+
+        <img src="img/g/10.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="밤에짠우유"> 
+
+        <img src="img/g/11.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="ssg milk 유기농">  
+
+         <img src="img/g/12.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="강성원 우유"> 
+
+        <img src="img/g/13.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="내추럴플랜 프리미엄">
+
+        <img src="img/g/14.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="범산목장 유기농 우유">  
+
+        <img src="img/g/15.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="후디스 초유 넣은 우유">
+
+        <img src="img/g/16.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="설목장 유기농 우유">
+
+        <img src="img/g/17.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="단일목장 프리미엄 우유">
+
+        <img src="img/g/18.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="상하목장 유기농 우유">
+
+        <img src="img/g/19.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="파스퇴르 무항생제 인증 바른목장 우유">
+
+        <img src="img/g/uiui.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="매일우유 병입">  
+
+        <img src="img/g/2.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="중국鮮乳Fresh Milk 병입">  
+
+        <img src="img/g/oish.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="일본 明治おいしい牛乳 팩밀크">
+
+        <img src="img/g/meji.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="일본 유키지루시 메구미루쿠 팩밀크">
+
+        <img src="img/g/meihjio.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="일본 메이지 오이시이 팩밀크">
+
+        <img src="img/g/20.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="일본 모리나가 오이시이 森永のおいしい牛乳 팩밀크">
+
+        <img src="img/g/21.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="일본 요츠바 홋카이도 팩밀크">
+
+        <img src="img/g/22.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="일본 特選よつ葉牛乳 특선 요츠바 팩밀크">
+
+        <img src="img/g/23.jpg" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="일본 タカナシ 低温殺菌牛乳 팩밀크">
+
+        <img src="img/g/24.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="일본 べつかい乳業興社 삼각우유">
+
+        <img src="img/g/25.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="중국 纯牛奶(Chun Niunai) 팩밀크">
+
+        <img src="img/g/26.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="중국 蒙牛 纯牛奶 (Mengniu Pure Milk) 팩밀크">
+
+        <img src="img/g/27.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="중국 린펑잉 (Mengniu Pure Milk) 팩밀크">
+
+        <img src="img/g/28.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+             data-description="중국 三元 (Sanyuan milk) 팩밀크">
+
+        <img src="img/g/29.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+               data-description="대만 鮮乳 (Fresh Milk) 팩밀크">
+
+        <img src="img/g/30.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+               data-description="서울우유 1L 팩">
+
+        <img src="img/g/31.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+               data-description="서울우유 180ml 팩">
+
+        <img src="img/g/32.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+               data-description="매일우유 180ml 팩">
+
+        <img src="img/g/33.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+               data-description="매일우유 200ml 팩">
+
+        <img src="img/g/34.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+               data-description="대구우유 200ml 팩">
+
+        <img src="img/g/35.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+               data-description="연세우유 200ml 팩">
+
+        <img src="img/g/36.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+               data-description="소화가 잘되는 우유 190ml 팩">
+
+        <img src="img/g/37.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+               data-description="서울우유 190ml 팩">
+
+        <img src="img/g/38.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+               data-description="2010년대 서울우유 190ml 팩">
+
+        <img src="img/g/39.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+               data-description="2010년대 부산우유 200ml 팩">
+
+        <img src="img/g/40.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+               data-description="2010년대 부산우유 200ml 팩">
+
+        <img src="img/g/41.jpg" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+               data-description="gs 25 1925 우유 900ml 팩">
+
+        <img src="img/g/42.png" class="hover-card imgpadding1" style="padding: 10px; height: 300px;"
+               data-description="앱솔루트 베이비 더블유 우유 900ml 팩">
+
+
+
+
+
+      </div>
+  </main>
+  
+  <img src="babymoo2.png" class="sticker umma-hover" id="sticker-cow">
+  <a href="main.html" ><img src="b1.png" alt="main" class="milk-btn"></a>
+
+  <!-- 기존 팝업 기능은 그대로 유지됩니다 -->
+  <img src="mosaid.png" id="popup-image" class="hidden">
+  <audio id="popup-sound" src="push.mp3"></audio>
+
+  <div id="tooltip"></div>
+
+  <script>
+    const specialSticker = document.getElementById('sticker-cow');
+    const popupImage = document.getElementById('popup-image');
+    const popupSound = document.getElementById('popup-sound');
+
+    specialSticker.addEventListener('click', () => {
+      popupSound.currentTime = 0;
+      popupSound.play();
+      popupImage.classList.remove('hidden');
+    });
+
+    const hoverCards = document.querySelectorAll('.hover-card');
+    const tooltip = document.getElementById('tooltip');
+
+    hoverCards.forEach(card => {
+      card.addEventListener('mouseenter', (event) => {
+        const description = event.target.dataset.description;
+                tooltip.textContent = description;
+        
+        tooltip.style.opacity = '1';
+      });
+
+      card.addEventListener('mousemove', (event) => {
+        tooltip.style.left = event.pageX + 15 + 'px';
+        tooltip.style.top = event.pageY + 15 + 'px';
+      });
+
+      card.addEventListener('mouseleave', () => {
+        tooltip.style.opacity = '0';
+      });
+    });
+  </script>
+
+</body>
+</html>
